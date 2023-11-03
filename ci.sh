@@ -8,5 +8,6 @@ git config --global url."https://".insteadOf git://
 nvm install v9.11.1
 nvm use v9.11.1 
 apt-get install python2.7 -y
-PYTHON=python2 npm i 
+export PYTHON=python2 
+npm i 
 npm test
