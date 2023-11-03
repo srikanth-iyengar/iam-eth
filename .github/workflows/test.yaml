@@ -1,0 +1,19 @@
+name: smartcontract testing
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install node packages
+        run: npm i
+
+      - name: Run tests
+        run: npm test
