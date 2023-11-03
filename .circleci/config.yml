@@ -9,21 +9,24 @@ jobs:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
     docker:
-      - image: node:9.11.1
+      - image: deadcoder11u2/ci-img
     steps:
-      - run:
-          name: "Install git"
-          command: apt-get update && apt-get install git -y
       - checkout
       - run:
           name: "Say hello"
           command: echo "Testing in progress"
       - run:
+          name: "Install nvm"
+          command: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+      - run:
+          name: "Install node 9.11.1"
+          command: source ~/.bashrc && nvm install v9.11.1
+      - run:
           name: "install packages"
-          command: npm i
+          command: source ~/.bashrc && npm i
       - run: 
           name: "Test smart contract"
-          command: npm test
+          command: source ~/.bashrc && npm test
         
 
 # Orchestrate jobs using workflows
