@@ -7,7 +7,7 @@ export NVM_DIR="$HOME/.nvm"
 git config --global url."https://".insteadOf git://
 nvm install v9.11.1
 nvm use v9.11.1 
-apt-get install python2.7 -y
+apt-get install python2.7 gcc g++ -y
 export PYTHON=python2 
 npm i 
 npm test
