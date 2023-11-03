@@ -17,7 +17,7 @@ jobs:
           command: echo "Testing in progress"
       - run:
           name: "Install nvm"
-          command: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+          command: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash ; source ~/.bashrc && nvm install v9.11.1 ; nvm use v9.11.1 ; npm i ; npm test
       - run:
           name: "Install node 9.11.1"
           command: source ~/.bashrc && nvm install v9.11.1
