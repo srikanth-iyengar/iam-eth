@@ -6,5 +6,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completionnvm install v9.11.1
 nvm install v9.11.1
 nvm use v9.11.1 
-npm i 
+apt-get install python2.7 -y
+PYTHON=python2 npm i 
 npm test
